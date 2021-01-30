@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>qsimulatR on GedankenExperiment</title>
+    <link>https://www.itkp.uni-bonn.de/~urbach/blog/tags/qsimulatr/</link>
+    <description>Recent content in qsimulatR on GedankenExperiment</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 20 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://www.itkp.uni-bonn.de/~urbach/blog/tags/qsimulatr/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The qsimulatR package on CRAN</title>
+      <link>https://www.itkp.uni-bonn.de/~urbach/blog/2020/12/20/qsimulatr/</link>
+      <pubDate>Sun, 20 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.itkp.uni-bonn.de/~urbach/blog/2020/12/20/qsimulatr/</guid>
+      <description>qsimulatR package for quantum computing with R Quantum computing is attracting a lot of attention recently due to significant advances in constructing quantum devices. While this does not yet mean that large scale quantum computing is possible, it might be so in the future. Thus, for the time being, quantum simulators play an important role for inventing and testing of algorithms.
+Quantum computing requires a different approach to programming than many of us are used to on classical computers.</description>
+    </item>
+    
+  </channel>
+</rss>

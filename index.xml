@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>GedankenExperiment</title>
+    <link>https://www.itkp.uni-bonn.de/~urbach/blog/</link>
+    <description>Recent content on GedankenExperiment</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 20 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://www.itkp.uni-bonn.de/~urbach/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Links</title>
+      <link>https://www.itkp.uni-bonn.de/~urbach/blog/links/</link>
+      <pubDate>Sat, 30 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.itkp.uni-bonn.de/~urbach/blog/links/</guid>
+      <description>Here is a list of other blogs I like to read
+ (https://blog.fefe.de) (https://berthub.eu/articles/) (https://www.r-bloggers.com/)  </description>
+    </item>
+    
+    <item>
+      <title>GedankenExperiment</title>
+      <link>https://www.itkp.uni-bonn.de/~urbach/blog/about/</link>
+      <pubDate>Thu, 21 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.itkp.uni-bonn.de/~urbach/blog/about/</guid>
+      <description>Some thoughts about this and that by Carsten Urbach and other authors.
+I&amp;rsquo;m a theoretical physicist at university of Bonn with research interests in lattice gauge and quantum field theory, with a focus on computational physics.</description>
+    </item>
+    
+    <item>
+      <title>The qsimulatR package on CRAN</title>
+      <link>https://www.itkp.uni-bonn.de/~urbach/blog/2020/12/20/qsimulatr/</link>
+      <pubDate>Sun, 20 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.itkp.uni-bonn.de/~urbach/blog/2020/12/20/qsimulatr/</guid>
+      <description>qsimulatR package for quantum computing with R Quantum computing is attracting a lot of attention recently due to significant advances in constructing quantum devices. While this does not yet mean that large scale quantum computing is possible, it might be so in the future. Thus, for the time being, quantum simulators play an important role for inventing and testing of algorithms.
+Quantum computing requires a different approach to programming than many of us are used to on classical computers.</description>
+    </item>
+    
+    <item>
+      <title>Statistical analysis of correlation functions using hadron</title>
+      <link>https://www.itkp.uni-bonn.de/~urbach/blog/2020/08/01/statistical-analysis-of-correlation-functions-using-hadron/</link>
+      <pubDate>Sat, 01 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.itkp.uni-bonn.de/~urbach/blog/2020/08/01/statistical-analysis-of-correlation-functions-using-hadron/</guid>
+      <description>We recently published the hadron package on CRAN. You may install it via install.packages(&#34;hadron&#34;). Here we explain how to use hadron to analyse so-called correlation functions from Monte Carlo simulations in particle and statistical physics.
+Data Type cf for Correlation Functions In the following we will discuss the analysis of so called correlation functions. We denote a Markov Chain Monte Carlo ensemble as \(U=\{U_\tau\}\), where each \(U_\tau\) has additional internal indices, in particular space \(x\) and Euclidean time \(t\).</description>
+    </item>
+    
+    <item>
+      <title>hadron package for statistical data analysis on CRAN</title>
+      <link>https://www.itkp.uni-bonn.de/~urbach/blog/2020/07/04/hadron-package-for-statistical-data-analysis-on-cran/</link>
+      <pubDate>Sat, 04 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.itkp.uni-bonn.de/~urbach/blog/2020/07/04/hadron-package-for-statistical-data-analysis-on-cran/</guid>
+      <description>hadron is an R package, which is now available on CRAN. It represents a toolkit to perform statistical analyses of correlation functions generated from Lattice Monte Carlo simulations. In particular, a class cf for correlation functions and methods to analyse those are defined. This includes (blocked) bootstrap (based on the boot package) and jackknife, but also an automatic determination of integrated autocorrelation times. hadron also provides a very general function bootstrap.</description>
+    </item>
+    
+    <item>
+      <title>Exponentielles Wachstum</title>
+      <link>https://www.itkp.uni-bonn.de/~urbach/blog/2020/04/15/exponentielles-wachstum/</link>
+      <pubDate>Wed, 15 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.itkp.uni-bonn.de/~urbach/blog/2020/04/15/exponentielles-wachstum/</guid>
+      <description>Exponentielles Wachstum Von exponentiellem Wachstum spricht man dann, wenn sich etwas jeden Tag mit einem festen Faktor vervielfacht. Also beispielsweise dann, wenn sich etwas jeden Tag verdoppelt. Dann beträgt der Faktor 2.
+Nehmen wir die Verbreitung einer ansteckenden Krankheit als Beispiel: Da wir eine ausgedachte Krankheit betrachen, müssen wir Annahmen machen, insbesondere, wie viele Personen von einem Infizierten pro Tag angesteckt werden. Machen wir hier die Annahme, dass jeder Infiziert pro Tag eine weitere Person ansteckt.</description>
+    </item>
+    
+  </channel>
+</rss>

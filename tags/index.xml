@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on GedankenExperiment</title>
+    <link>https://www.itkp.uni-bonn.de/~urbach/blog/tags/</link>
+    <description>Recent content in Tags on GedankenExperiment</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 20 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://www.itkp.uni-bonn.de/~urbach/blog/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>QC</title>
+      <link>https://www.itkp.uni-bonn.de/~urbach/blog/tags/qc/</link>
+      <pubDate>Sun, 20 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.itkp.uni-bonn.de/~urbach/blog/tags/qc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>qsimulatR</title>
+      <link>https://www.itkp.uni-bonn.de/~urbach/blog/tags/qsimulatr/</link>
+      <pubDate>Sun, 20 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.itkp.uni-bonn.de/~urbach/blog/tags/qsimulatr/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Quantum Computing</title>
+      <link>https://www.itkp.uni-bonn.de/~urbach/blog/tags/quantum-computing/</link>
+      <pubDate>Sun, 20 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.itkp.uni-bonn.de/~urbach/blog/tags/quantum-computing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>R</title>
+      <link>https://www.itkp.uni-bonn.de/~urbach/blog/tags/r/</link>
+      <pubDate>Sun, 20 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.itkp.uni-bonn.de/~urbach/blog/tags/r/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Monte Carlo</title>
+      <link>https://www.itkp.uni-bonn.de/~urbach/blog/tags/monte-carlo/</link>
+      <pubDate>Sat, 01 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.itkp.uni-bonn.de/~urbach/blog/tags/monte-carlo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Statistics</title>
+      <link>https://www.itkp.uni-bonn.de/~urbach/blog/tags/statistics/</link>
+      <pubDate>Sat, 01 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.itkp.uni-bonn.de/~urbach/blog/tags/statistics/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>COVID</title>
+      <link>https://www.itkp.uni-bonn.de/~urbach/blog/tags/covid/</link>
+      <pubDate>Wed, 15 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.itkp.uni-bonn.de/~urbach/blog/tags/covid/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

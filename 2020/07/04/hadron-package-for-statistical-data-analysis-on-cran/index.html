@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.80.0" />
+
+
+<title>hadron package for statistical data analysis on CRAN - GedankenExperiment</title>
+<meta property="og:title" content="hadron package for statistical data analysis on CRAN - GedankenExperiment">
+
+
+  <link href='https://www.itkp.uni-bonn.de/~urbach/blog/favicon.ico' rel='icon' type='image/x-icon'/>
+
+
+
+  
+
+
+
+
+
+
+
+
+<link href='//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css' rel='stylesheet' type='text/css' />
+
+
+
+<link rel="stylesheet" href="https://www.itkp.uni-bonn.de/~urbach/blog/css/fonts.css" media="all">
+<link rel="stylesheet" href="https://www.itkp.uni-bonn.de/~urbach/blog/css/main.css" media="all">
+
+
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <nav class="nav">
+  <a href="https://www.itkp.uni-bonn.de/~urbach/blog/" class="nav-logo">
+    <img src="https://www.itkp.uni-bonn.de/~urbach/blog/images/%3cnil%3e"
+         width=""
+         height=""
+         alt="">
+  </a>
+
+  <ul class="nav-links">
+    
+    <li><a href="https://www.itkp.uni-bonn.de/~urbach/blog/about/">GedankenExperiment</a></li>
+    
+    <li><a href="https://github.com/urbach">GitHub</a></li>
+    
+    <li><a href="https://www.itkp.uni-bonn.de/~urbach/blog/">Home</a></li>
+    
+    <li><a href="https://www.itkp.uni-bonn.de/~urbach/blog/links/">Links</a></li>
+    
+    <li><a href="https://www.itkp.uni-bonn.de/~urbach/blog/tags/">Tags</a></li>
+    
+  </ul>
+</nav>
+
+      </header>
+
+
+<main class="content" role="main">
+
+  <article class="article">
+    
+    <span class="article-duration">6 min read</span>
+    
+
+    <h1 class="article-title">hadron package for statistical data analysis on CRAN</h1>
+
+    
+    <span class="article-date">2020-07-04</span></br>
+    
+
+    <span class="article-author">
+      Carsten Urbach
+    </span>
+    
+    <div class="article-content">
+      
+
+
+<p><code>hadron</code> is an <code>R</code> package, which is now available on CRAN.
+It represents a toolkit to perform statistical analyses of correlation
+functions generated from Lattice Monte Carlo simulations. In
+particular, a class <code>cf</code> for correlation functions and
+methods to analyse those are defined. This includes (blocked)
+bootstrap (based on the <code>boot</code> package) and jackknife, but also an
+automatic determination of integrated autocorrelation
+times. <code>hadron</code> also provides a very general function
+<code>bootstrap.nlsfit()</code> to bootstrap a non-linear least squares fit.
+More specific functions are provided to extract hadronic quantities
+from Lattice Quantum Chromodynamics simulations, a particular Monte
+Carlo simulation,(see e.g. European Twisted Mass Collaboration, P. Boucaud et
+al. (2008) <a href="doi:10.1016/j.cpc.2008.06.013" class="uri">doi:10.1016/j.cpc.2008.06.013</a>). Here, to determine
+energy eigenvalues of hadronic states, specific fitting routines
+and in particular the generalised eigenvalue method (see
+e.g. B. Blossier et al. (2009) <a href="doi:10.1088/1126-6708/2009/04/094" class="uri">doi:10.1088/1126-6708/2009/04/094</a>
+and M. Fischer et al. (2020)
+<a href="https://inspirehep.net/literature/1792113" class="uri">https://inspirehep.net/literature/1792113</a>) are implemented.
+In addition, input/output and plotting routines are available.</p>
+<div id="data-type-cf-for-correlation-functions" class="section level1">
+<h1>Data Type <code>cf</code> for Correlation Functions</h1>
+<p>In the following we will discuss the analysis of so called correlation
+functions. We denote a Markov Chain Monte Carlo ensemble as
+<span class="math inline">\(U=\{U_\tau\}\)</span>, where each <span class="math inline">\(U_\tau\)</span> has additional internal indices, in
+particular space <span class="math inline">\(x\)</span> and Euclidean time <span class="math inline">\(t\)</span>. Consider a set of
+observables <span class="math inline">\(O_i[U]\)</span>, for which one can compute correlation functions
+<span class="math display">\[
+C_{ij}(t - t&#39;)\ =\ \langle \sum_x O_i[U](x, t) | \sum_x O_j[U](x, t&#39;) \rangle\,,
+\]</span>
+where <span class="math inline">\(\langle . \rangle\)</span> denotes the expectation value over the
+Markov chain ensemble.</p>
+<p>For instance in Lattice QCD, but also for other physical theories one
+can show that
+<span class="math display">\[
+C_{ij}(t) \propto \sum_n A_{ni} A_{nj} e^{- E_n t}\,.
+\]</span>
+<span class="math inline">\(E_n&gt;0\)</span> are real values energy levels and the <span class="math inline">\(A_{ni}\)</span> amplitudes.</p>
+<p>The <code>hadron</code> package provides a data type or better a class for such
+correlation functions and correlation matrices, which is called
+<code>cf</code>. There is a whole list of input
+routines available to import data from HDF5, text or binary formats
+into the <code>cf</code> container. The most important ones are compiled
+in the following table:</p>
+<table>
+<thead>
+<tr class="header">
+<th>Hadron Function</th>
+<th>Correlator Format</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>readtextcf</td>
+<td>text</td>
+</tr>
+<tr class="even">
+<td>readbinarycf</td>
+<td>binary, HDF5</td>
+</tr>
+<tr class="odd">
+<td>readbinarysamples</td>
+<td>binary</td>
+</tr>
+<tr class="even">
+<td>—</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<p>For even more flexibility there is the <code>raw_cf</code> container, for
+which we refer to the documentation.</p>
+<p>In oder to solve the generalised eigenvalue problem (GEVP) one has to
+read several correlation functions into one <code>cf</code> correlator
+matrix. For this purpose the combine operation <code>c</code> is defined
+for the class <code>cf</code>. Thus, for instance the following code
+snipped can be used:</p>
+<pre class="r"><code>Time &lt;- 48
+correlatormatrix &lt;- cf()
+for(i in c(1:4)) {
+  tmp &lt;- readbinarycf(files=paste0(&quot;corr&quot;, i, &quot;.dat&quot;), T=Time)
+  correlatormatrix &lt;- c(correlatormatrix, tmp)
+}
+rm(tmp)</code></pre>
+<p>This code snippet reads a correlator matrix with four correlation
+functions from four files. The read functions can also directly read
+from a list of files. File lists can be created conveniently using the
+following routines</p>
+<pre class="r"><code>getorderedfilelist &lt;- function(path=&quot;./&quot;, basename=&quot;onlinemeas&quot;,
+                               last.digits=4, ending=&quot;&quot;)
+getconfignumbers &lt;- function(ofiles, basename=&quot;onlinemeas&quot;,
+                             last.digits=4, ending=&quot;&quot;)
+getorderedconfigindices &lt;- function(path=&quot;./&quot;, basename=&quot;onlinemeas&quot;,
+                                    last.digits=4, ending=&quot;&quot;)</code></pre>
+<p>for which we refer to the documentation.</p>
+</div>
+<div id="resampling-strategies" class="section level1">
+<h1>Resampling Strategies</h1>
+<p>Once the bare data is available as a <code>cf</code>, one has to decide
+for an error analysis strategy. This can be either the bootstrap or
+the jackknife. To demonstrate this we first load the sample
+correlation matrix provided by hadron</p>
+<pre class="r"><code>data(correlatormatrix)</code></pre>
+<p>which corresponds to a <span class="math inline">\(2\times 2\)</span> local-fuzzed correlator matrix with
+quantum numbers of the pion.
+First the resampling needs to be performed, for instance for the
+(blocked) bootstrap</p>
+<pre class="r"><code>boot.R &lt;- 150
+boot.l &lt;- 1
+seed &lt;- 1433567
+correlatormatrix &lt;- bootstrap.cf(cf=correlatormatrix,
+                                 boot.R=boot.R,
+                                 boot.l=boot.l,
+                                 seed=seed)</code></pre>
+<p>Analogously, <code>jackknife.cf</code> initiates the jackknife
+resampling. <code>boot.R</code> is the number of bootstrap replicates,
+<code>boot.l</code> the block lentgh. Now, it is also possible to plot the
+data with errors</p>
+<pre class="r"><code>plot(correlatormatrix, log=&quot;y&quot;,
+     xlab=c(&quot;t/a&quot;), ylab=&quot;C(t)&quot;)</code></pre>
+<p><img src="https://www.itkp.uni-bonn.de/~urbach/blog/2020/07/04/hadron-package-for-statistical-data-analysis-on-cran/index_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+</div>
+<div id="solving-the-gevp" class="section level1">
+<h1>Solving the GEVP</h1>
+<p>Let us denote the correlator matrix by <span class="math inline">\(C(t)\)</span>. Now we are going to
+solve the generalised eigenvalue problem
+<span class="math display">\[
+C(t)\, v_i(t, t_0)\ =\ \lambda_i(t, t_0)\, C(t_0)\, v_i(t, t_0)
+\]</span>
+with some reference time value <span class="math inline">\(t_0\)</span>. One can show that the so-called
+principal correlators <span class="math inline">\(\lambda(t, t_0)\)</span> follow for large <span class="math inline">\(t\)</span>-values
+the following behaviour
+<span class="math display">\[
+\lambda_i(t, t_0)\ \propto\ e^{-E_i(t-t_0)} + e^{-E_i(T-t+t_0)}\,.
+\]</span>
+Here, <span class="math inline">\(T\)</span> is the time extent and we focus on a symmetric correlation
+matrix in time. However, analogously one can show this with a minus
+sign for anti-symmetric correlation matrices in time. Of course, we
+also have <span class="math inline">\(\lambda(t_0, t_0) = 1\)</span>. We re-write the generalised
+eigenvalue problem by defining
+<span class="math display">\[
+w_i\ =\ \sqrt{C(t_0)} v_i
+\]</span>
+and solve the simple eigenvalue problem
+<span class="math display">\[
+\sqrt{C(t_0)}^{-1}\,C(t)\,\sqrt{C(t_0)}^{-1}\, w_i\ =\ A\, w_i\ =\ \lambda_i(t, t_0)\, w_i
+\]</span>
+instead.</p>
+<p>In <code>hadron</code> this task is performed as follows on the bootstrap
+correlator matrix in the most simple case</p>
+<pre class="r"><code>t0 &lt;- 4
+correlatormatrix.gevp &lt;- bootstrap.gevp(cf=correlatormatrix, t0=t0,
+                                        element.order=c(1,2,3,4),
+                                        sort.type=&quot;values&quot;)</code></pre>
+<p>Next, the principal correlators <span class="math inline">\(\lambda_i\)</span> are obtained as follows,
+where in this case we have <span class="math inline">\(i=1,2\)</span></p>
+<pre class="r"><code>pc1 &lt;- gevp2cf(gevp=correlatormatrix.gevp, id=1)
+pc2 &lt;- gevp2cf(gevp=correlatormatrix.gevp, id=2)
+plot(pc1, col=&quot;red&quot;, pch=21, log=&quot;y&quot;, xlab=&quot;t&quot;, ylab=&quot;C(t)&quot;)
+plot(pc2, rep=TRUE, col=&quot;blue&quot;, pch=22)</code></pre>
+<p><img src="https://www.itkp.uni-bonn.de/~urbach/blog/2020/07/04/hadron-package-for-statistical-data-analysis-on-cran/index_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<p>These principal correlators can be analysed as every object of type
+<code>cf</code>, see below.</p>
+<div id="additional-options" class="section level2">
+<h2>Additional Options</h2>
+<p><code>bootstrap.gevp</code> has some additional options which are worth
+mentioning.</p>
+<ol style="list-style-type: decimal">
+<li><p>During the bootstrap procedure for the GEVP, eigenvalues have to be
+sorted for every <span class="math inline">\(t\)</span>-value. This can be either done by
+<code>values</code>, <code>vectors</code> or <code>det</code> passed via the
+parameter <code>sort.type</code>. When <code>vectors</code> is chosen,
+scalar products of eigenvectors are computed
+<span class="math display">\[
+v(t&#39;, t_0) \cdot v(t, t_0)
+\]</span>
+and the overlap maximised. When <code>sort.t0</code> is set to
+<code>TRUE</code>, the comparison time is chosen constant as
+<span class="math inline">\(t&#39;=t_0+1\)</span>. Otherwise, <span class="math inline">\(t&#39;=t-1\)</span> is set in dependence of <span class="math inline">\(t\)</span>.</p></li>
+<li><p>With parameter <code>element.order</code> the correlation functions in
+the input correlator matrix are specified for use in the GEVP. This
+can be a sub-set of all the correlation functions in the
+matrix. Double usage is allowed as well.</p></li>
+</ol>
+</div>
+</div>
+<div id="extracting-energies" class="section level1">
+<h1>Extracting Energies</h1>
+<div id="matrixfit" class="section level2">
+<h2>Matrixfit</h2>
+<p>First, a fit directly to the (principal) correlator can be
+performed. The corresponding functionality is provided in
+<code>hadron</code> by the function <code>matrixfit</code> and, more modern,
+<code>new_matrixfit</code>. Let us discuss here the former in its
+application to</p>
+<pre class="r"><code>pc1.matrixfit &lt;- matrixfit(cf=pc1, t1=6, t2=21, useCov=TRUE,
+                           parlist=array(c(1,1), dim=c(2,1)),
+                           sym.vec=c(&quot;cosh&quot;), fit.method=&quot;lm&quot;)</code></pre>
+<pre><code>## Loading required namespace: minpack.lm</code></pre>
+<pre class="r"><code>plot(pc1.matrixfit, do.qqplot=FALSE,
+     xlab=&quot;t&quot;, ylab=&quot;C(t)&quot;)</code></pre>
+<p><img src="https://www.itkp.uni-bonn.de/~urbach/blog/2020/07/04/hadron-package-for-statistical-data-analysis-on-cran/index_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+<p>An extended overview is provided by the overloaded <code>summary</code>
+function</p>
+<pre class="r"><code>summary(pc1.matrixfit)</code></pre>
+<pre><code>
+ ** Result of one state exponential fit **
+
+based on 541 measurements
+time range from 6  to  21 
+
+ground state energy:
+E   =    0.4020216 
+dE  =    0.05814395 
+
+Amplitudes:
+P 1     =    2.997469 
+dP 1    =    0.4713082 
+
+boot.R  =    150  (bootstrap samples)
+boot.l  =    1  (block length)
+useCov  =    TRUE 
+chisqr  =    4.182661 
+dof =    14 
+chisqr/dof=  0.2987615 
+Quality of the fit (p-value): 0.9942633 </code></pre>
+<p>This yields an energy level with error of
+<span class="math inline">\(E =0.402(58)\)</span>.</p>
+<p>As we know that <span class="math inline">\(\lambda(t_0, t_0)=1\)</span>, we can fit more than a single
+exponential to the principal correlator. For this <code>matrixfit</code>
+knows the model <code>pc</code>. The corresponding fit model reads
+<span class="math display">\[
+f(t; E, \Delta E, A)\ =\ \exp(-E(t-t_0))(A + (1-A)\exp(-\Delta E(t-t_0))
+\]</span>
+involving three fit parameters. Of course, the fit must be started at
+earlier time slices in order to be sensitive to excited states.</p>
+<pre class="r"><code>pc1.matrixfit &lt;- matrixfit(cf=pc1, t1=3, t2=20, useCov=TRUE,
+                           parlist=array(c(1,1), dim=c(2,1)),
+                           sym.vec=c(&quot;cosh&quot;), fit.method=&quot;lm&quot;,
+                           model=&quot;pc&quot;)
+plot(pc1.matrixfit, do.qqplot=FALSE,
+     xlab=&quot;t&quot;, ylab=&quot;C(t)&quot;)</code></pre>
+<p><img src="https://www.itkp.uni-bonn.de/~urbach/blog/2020/07/04/hadron-package-for-statistical-data-analysis-on-cran/index_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+<p>A useful crosscheck is to not plot the raw correlator, but the
+correlator with the leading exponential divided out</p>
+<pre class="r"><code>plot(pc1.matrixfit, do.qqplot=FALSE,
+     xlab=&quot;t&quot;, ylab=&quot;C(t)&quot;, plot.raw=FALSE)
+abline(h=1, lty=2)</code></pre>
+<p><img src="https://www.itkp.uni-bonn.de/~urbach/blog/2020/07/04/hadron-package-for-statistical-data-analysis-on-cran/index_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
+<p>In such a plot all the data points should fluctuate around one.
+This matrixfit gives as a result
+<span class="math inline">\(E =0.334(60)\)</span>.</p>
+</div>
+<div id="effective-masses" class="section level2">
+<h2>Effective Masses</h2>
+<p>Similaryly, effective masses
+<span class="math display">\[
+M_\mathrm{eff}\ =\ -\log\frac{C(t)}{C(t+1)}
+\]</span>
+can be computed and bootstrapped as follows</p>
+<pre class="r"><code>pc1.effectivemass &lt;- fit.effectivemass(cf=bootstrap.effectivemass(cf=pc1),
+                                       t1=5, t2=20)
+plot(pc1.effectivemass, col=&quot;red&quot;, pch=21, ylim=c(0,1),
+     xlab=&quot;t&quot;, ylab=&quot;Meff&quot;)</code></pre>
+<p><img src="https://www.itkp.uni-bonn.de/~urbach/blog/2020/07/04/hadron-package-for-statistical-data-analysis-on-cran/index_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
+<p>From the fit to the effective masses we obtain in this case
+<span class="math inline">\(E =0.365(33)\)</span>.</p>
+</div>
+</div>
+
+    </div>
+  </article>
+
+  
+
+
+</main>
+
+      <footer class="footer">
+        <ul class="footer-links">
+          <li>
+            <a href="https://www.itkp.uni-bonn.de/~urbach/blog/index.xml" type="application/rss+xml" target="_blank">RSS feed</a>
+          </li>
+          <li>
+            <a href="https://gohugo.io/" class="footer-links-kudos">Made with <img src="https://www.itkp.uni-bonn.de/~urbach/blog/images/hugo-logo.png" alt="Img link to Hugo website" width="22" height="22"></a>
+          </li>
+        </ul>
+      </footer>
+
+    </div>
+    
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/r.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/c.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/c&#43;&#43;.min.js"></script>
+<script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+
+
+
+    
+<script src="https://www.itkp.uni-bonn.de/~urbach/blog/js/math-code.js"></script>
+<script async src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
+    
+  </body>
+</html>
+

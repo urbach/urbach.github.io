@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.80.0" />
+
+
+<title>Exponentielles Wachstum - ... und was sagen uns die Zahlen eigentlich?  - GedankenExperiment</title>
+<meta property="og:title" content="Exponentielles Wachstum - GedankenExperiment">
+
+
+  <link href='https://www.itkp.uni-bonn.de/~urbach/blog/favicon.ico' rel='icon' type='image/x-icon'/>
+
+
+
+  
+
+
+
+
+
+
+
+
+<link href='//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css' rel='stylesheet' type='text/css' />
+
+
+
+<link rel="stylesheet" href="https://www.itkp.uni-bonn.de/~urbach/blog/css/fonts.css" media="all">
+<link rel="stylesheet" href="https://www.itkp.uni-bonn.de/~urbach/blog/css/main.css" media="all">
+
+
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <nav class="nav">
+  <a href="https://www.itkp.uni-bonn.de/~urbach/blog/" class="nav-logo">
+    <img src="https://www.itkp.uni-bonn.de/~urbach/blog/images/%3cnil%3e"
+         width=""
+         height=""
+         alt="">
+  </a>
+
+  <ul class="nav-links">
+    
+    <li><a href="https://www.itkp.uni-bonn.de/~urbach/blog/about/">GedankenExperiment</a></li>
+    
+    <li><a href="https://github.com/urbach">GitHub</a></li>
+    
+    <li><a href="https://www.itkp.uni-bonn.de/~urbach/blog/">Home</a></li>
+    
+    <li><a href="https://www.itkp.uni-bonn.de/~urbach/blog/links/">Links</a></li>
+    
+    <li><a href="https://www.itkp.uni-bonn.de/~urbach/blog/tags/">Tags</a></li>
+    
+  </ul>
+</nav>
+
+      </header>
+
+
+<main class="content" role="main">
+
+  <article class="article">
+    
+    <span class="article-duration">6 min read</span>
+    
+
+    <h1 class="article-title">Exponentielles Wachstum</h1>
+
+    
+    <span class="article-date">2020-04-15</span></br>
+    
+
+    <span class="article-author">
+      Carsten Urbach
+    </span>
+    
+    <div class="article-content">
+      
+
+
+<div id="exponentielles-wachstum" class="section level1">
+<h1>Exponentielles Wachstum</h1>
+<p>Von exponentiellem Wachstum spricht man dann, wenn sich etwas jeden
+Tag mit einem festen Faktor vervielfacht. Also beispielsweise dann,
+wenn sich etwas jeden Tag verdoppelt. Dann beträgt der Faktor 2.</p>
+<p>Nehmen wir die Verbreitung einer ansteckenden Krankheit als Beispiel:
+Da wir eine ausgedachte Krankheit betrachen, müssen wir Annahmen
+machen, insbesondere, wie viele Personen von einem Infizierten pro Tag
+angesteckt werden. Machen wir hier die Annahme, dass jeder Infiziert
+pro Tag eine weitere Person ansteckt. Starten wir mit einem
+Infizierten, dann haben wir nach einem Tag zwei Infizierte. Nach
+zwei Tagen sind es schon vier, da jeder der zwei einen weiteren
+infiziert. Weiter geht es mit acht nach drei, 16 nach vier und 32 nach
+fünf Tagen. <strong>Nach 14 Tagen sind es 16.384 Infizierte, wenn wir
+anehmen, dass niemand in dieser Zeit verstorben oder genesen ist.</strong></p>
+<p>Es ist vielleicht einfacher zu verstehen, wenn der Verlauf
+visualisiert wird. In der folgenden Animation werden auf der linken
+Seite die Infizierten als schwarze Punkte dargestellt. Man sieht, dass
+jeder Infizierte pro Tag einen weiteren ansteckt. An Tag fünf ist es
+schon schwierig, die Punkte noch auseinanderzuhalten. Im rechten
+Graphen der Animation wird die Anzahl der Infizierten entsprechend dem
+linken Graphen in Abhängigkeit vom Tag aufgetragen. Man sieht, dass
+die Zunahme der Anzahl (die Steigung der Kurve) schnell schneller
+wird. Genaugenommen verdoppelt sich nicht nur die Anzahl, sondern auch
+die Steigung jeden Tag.</p>
+<p><img src="https://www.itkp.uni-bonn.de/~urbach/blog/2020/04/15/exponentielles-wachstum/index_files/figure-html/unnamed-chunk-1-.gif" width="864" /></p>
+<div id="logarithmische-abbildung" class="section level2">
+<h2>Logarithmische Abbildung</h2>
+<p>Wie erkennt man exponentielles Wachstum aus Daten?</p>
+<p>Normalerweise benutzt man eine Achseneinteilung in einer Graphik, bei
+der gleicher Abstand auch gleiche Änderung der aufgetragenen Größe
+bedeutet, unabhängig davon, bei welchen Werten man sich befindet. Bei
+einer logartihmischen Skala bedeutet gleicher Abstand immer die
+gleiche Vervielfachung. Die nächste Abbildung ist identisch zur
+vorherigen, nur dass in der rechten Graphik die z-Achse logarithmisch
+ist. Die logarithmische Skala ist so gewählt, dass ein Achsenabschnitt
+immer einer Verdopplung der darunterliegenden Zahl bedeutet.</p>
+<p>Man sieht, dass auf dieser logarithmischen Skala (zur Basis zwei) die
+gleichen Daten von oben wie eine Gerade aussehen.</p>
+<p><img src="https://www.itkp.uni-bonn.de/~urbach/blog/2020/04/15/exponentielles-wachstum/index_files/figure-html/unnamed-chunk-2-.gif" width="864" /></p>
+<p>Umgekehrt gilt, wenn man Daten mit einer logarithmischen Skala auf der
+y-Achse aufträgt und dabei eine Gerade erhält, dann handelt es sich um
+ein exponentielles Verhalten.</p>
+</div>
+</div>
+<div id="beispiel" class="section level1">
+<h1>Beispiel</h1>
+<p>Natürlich ist es im Allgemeinen bei der Ausbreitung von Krankheiten
+nicht ganz so einfach. Infizierte werden wieder gesund, es werden
+nicht immer genau gleich viele von jedem Infizierten
+angesteckt. Außerdem ist ein Population immer endlich, was bedeutet,
+dass das exponentielle Wachstum nicht ewig weitergehen kann. Das
+bedeutet einerseits, dass es statistische Fluktuationen auf der
+Wachstumsrate gibt, und sich die Wachstumsrate außerdem über die Zeit
+ändern wird, je nachdem in welchem Stadium sich die Ausbreitung
+befindet.</p>
+<p>Als Beispiel schauen wir eine Gesellschaft an, die zugegebenermaßen
+sehr starr ist und nur wenig mit unserer realen Gesellschaft zu tun
+hat. Es gib 400 Individuen, die jeweils vier Nachbarn
+haben (oben, unten, rechts, links), mit denen sie Kontakt haben. Am
+Anfang gibt es einen Infizierten, als gefüllter roter Punkt
+dargestellt. Noch nicht infizierte sind durch schwarze gefüllte Symbole
+dargestellt, Genesene und damit immune Personen durch schwarze offene
+Symbole.</p>
+<p>Die Annahmen sind:</p>
+<ol style="list-style-type: decimal">
+<li>Die Krankheit ist 5 Tage ansteckend.</li>
+<li>Ein noch nicht Infizierter steckt sich bei einem Infizierten pro
+Tag mit einer Wahrscheinlichkeit von 19% an.</li>
+<li>3% der Erkrankten sterben</li>
+<li>Nach der Krankheit sind die Individuen immun.</li>
+</ol>
+<p>Ein möglicher Verlauf einer Epidemie ist in der folgenden Animation
+dargestellt, die ca. 60 Tage dauert..</p>
+<p><img src="https://www.itkp.uni-bonn.de/~urbach/blog/2020/04/15/exponentielles-wachstum/index_files/figure-html/unnamed-chunk-3-.gif" width="864" /></p>
+<p>In der folgenden Abbildung wird der Zeitverlauf der Fälle insgesamt,
+der Kranken, der Genesenen und der Toten dargestellt, mit
+logarithmischer Skala auf der y-Achse.</p>
+<p><img src="https://www.itkp.uni-bonn.de/~urbach/blog/2020/04/15/exponentielles-wachstum/index_files/figure-html/unnamed-chunk-4-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p>Man sieht einen sehr steilen Anstieg in den Fällen zu beginn von Tag 0
+bis 5 ungefähr. Dann flacht die Kurve etwas ab, steigt aber weiterhin
+exponentiell, aber mit kleinerer Rate, da ab Tag 5 die ersten
+Individuen genesen und damit nicht mehr ansteckend und auch nicht mehr
+ansteckbar sind. Eine weitere Änderung der
+Rate findet um Tag 25 statt: Es gibt jetzt im Mittel weniger ansteckbare
+Individuen pro Erkranktem, so dass die Rate kleiner wird. Schließlich,
+um Tag 40 herum flacht die Kurve ab, weil praktisch alle Individuen
+der Population schon infiziert waren oder sind oder gestorben sind.</p>
+<div id="einfluss-eines-lockdown" class="section level2">
+<h2>Einfluss eines <em>Lockdown</em></h2>
+<p>Im Beispiel oben ist praktisch die Gesamte Population einmal infiziert
+worden. Das liegt an den speziellen und sehr einfachen Verbindungen
+zwischen den einzelnen Individuen und der Wahrscheinlichkeit, mit der
+noch gesunde infiziert werden.</p>
+<p>Die Idee eines <em>lockdown</em> ist, die Wahrscheinlichkeit für Ansteckung
+(drastisch) zu reduzieren und damit die Verbreitung zu stoppen bzw. zu
+verlangsamen. In obigen Beispielmodell können wir natürlich sehr
+einfach diesen Parameter ändern. Zum Beispiel können wir annehmen,
+dass ab Tag 15 die Wahrscheinlichkeit von 19% auf 10% sinkt.</p>
+<p>In den folgenden Abbildungen werden die Ergebnisse für das
+ursprüngliche Modell (durchgezogenen Linien) mit denen eines Modells
+verglichen, bei dem die Wahrscheinlichkeit ab Tag 15 von 19% auf 10%
+sinkt.</p>
+<p><img src="https://www.itkp.uni-bonn.de/~urbach/blog/2020/04/15/exponentielles-wachstum/index_files/figure-html/unnamed-chunk-5-1.png" width="864" /></p>
+<p>Ab Tag 15 flacht die Kurve der gesamten Fälle erwartungsgemäß deutlich
+ab. Allerdings wird sie nie ganz flach. Dies erklärt sich damit, dass
+die Anzahl kranker in den 60 Tagen niemals auf 0 abfällt. Allerdings
+gibt es maximal 10 Kranke zur selben Zeit anstelle von maximal 100 für
+das ursprüngliche Modell. Selbst diese Reduktion würde also ein
+Gesundheitssystem deutlich entlasten, wenn es auch einfach nur
+deutlich länger dauern würde, bis sich fast alle der Population einmal
+infiziert haben.</p>
+<p>Wenn man die Wahrscheinlichkeit ab Tag 15 noch weiter reduziert, sagen
+wir auf 5%, so erhält man folgende Bilder:</p>
+<p><img src="https://www.itkp.uni-bonn.de/~urbach/blog/2020/04/15/exponentielles-wachstum/index_files/figure-html/unnamed-chunk-6-1.png" width="864" /></p>
+<p>Die gepunktete Linie entspricht dem Model mit 5% Wahrscheinlichkeit
+für Ansteckung ab Tag 15, verglichen wieder mit dem ursprünglichen
+Modell. In diesem Fall wird die Asbreitung tatsächlich angehalten und
+bei Tag 32 beendet.</p>
+<p>Auch auf die Todesfälle hat die Änderung der Wahrscheinlichkeit
+natürlich eine starke Auswirkung, wie in der folgenden Abbildung zu
+erkenne, in der die drei obigen Modelle verglichen werden:
+durchgezogene Linie für 19%, gestrichelte
+Linie 10% und gepunktete Linie für 5% Infektionswahrscheinlichkeit.</p>
+<p><img src="https://www.itkp.uni-bonn.de/~urbach/blog/2020/04/15/exponentielles-wachstum/index_files/figure-html/unnamed-chunk-7-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p>Für den Fall einer strikten Reduktion der Infektionswahrscheinlichkeit
+auf 5% werden wirklich Leben gerettet. Für die
+Infektionswahrscheinlichkeit von 10% sieht es zunächst so aus, aber
+da die Krankheitswelle viel länger dauern wird, als dargestellt, wird
+es einen ähnliche Anzahl Todesfälle geben, wie für den ursprünglichen
+Fall.</p>
+<p>Hierbei muss man allerdings bedenken, dass das Modell keine
+Überlastung von Krankenhäusern simuliert, was zu weiteren Todensfällen
+führen wird. Daher wird auch die Reduktion auf 10%
+Infektionswahrscheinlichkeit zu einer Rettung von Leben führen, da es
+nur etwa 10 Kranke gleichzeitig gibt.</p>
+</div>
+<div id="und-wenn-der-lockdown-zu-früh-aufgehoben-wird" class="section level2">
+<h2>… und wenn der <em>Lockdown</em> zu früh aufgehoben wird</h2>
+<p>In der Realität stellt sich immer die Frage, wann ein <em>Lockdown</em>
+wieder aufgehoben werden kann und soll. Was passiert, wenn man dies zu
+früh macht, sieht man in folgender Simulation, in der die
+Infektionswahrscheinlichkeit erst am Tag 15 auf 5% gesenkt wurde, dann
+aber am Tag 30 wieder auf 19% steigt. Der eine Kranke am Tag 30 reicht
+aus, damit die Infektionszahlen wieder exponentiell steigen können.</p>
+<p><img src="https://www.itkp.uni-bonn.de/~urbach/blog/2020/04/15/exponentielles-wachstum/index_files/figure-html/unnamed-chunk-8-1.png" width="864" /></p>
+<p>Trotzdem gewinnt man in diesem Szenario viel Zeit und entlastet ein
+Gesundheitssystem signifikant. Natürlich hängt es dabei wieder kritsch
+davon ab, wann der <em>Lockdown</em> aufgehoben wird.</p>
+</div>
+</div>
+<div id="ein-realistischeres-netzwerk" class="section level1">
+<h1>Ein realistischeres Netzwerk</h1>
+<p>Das quadratische Gitter mit periodischen Randbedingungen von oben ist
+natürlich sehr unrealistisch. Eine Gesellschaft kann realistischer
+durch sogenannte <em>small world</em> Netzwerke abgebildet werden. Als
+Beispiel nutze ich hier entweder ein
+<em><a href="https://en.wikipedia.org/wiki/Watts%E2%80%93Strogatz_model">Watts–Strogatz</a></em>
+small world Modell oder ein
+<a href="https://de.wikipedia.org/wiki/Barab%C3%A1si-Albert-Modell">Barabási-Albert-Modell</a>.</p>
+<p>Zunächst das Watts–Strogatz Modell:</p>
+<pre class="r"><code>library(igraph)</code></pre>
+<pre><code>## 
+## Attaching package: &#39;igraph&#39;</code></pre>
+<pre><code>## The following objects are masked from &#39;package:stats&#39;:
+## 
+##     decompose, spectrum</code></pre>
+<pre><code>## The following object is masked from &#39;package:base&#39;:
+## 
+##     union</code></pre>
+<pre class="r"><code>set.seed(9)
+dim &lt;- 2
+n0 &lt;- 20
+## a small world network with 40000 nodes
+g &lt;- sample_smallworld(dim=dim, size=n0, nei=3, p=0.05)
+p &lt;- 0.01</code></pre>
+<p>Die Anzahl der Knoten beträgt <span class="math inline">\(400\)</span> Knoten.</p>
+<p><img src="https://www.itkp.uni-bonn.de/~urbach/blog/2020/04/15/exponentielles-wachstum/index_files/figure-html/unnamed-chunk-10-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p>Nun das Barabási-Albert-Modell:</p>
+<p><img src="https://www.itkp.uni-bonn.de/~urbach/blog/2020/04/15/exponentielles-wachstum/index_files/figure-html/unnamed-chunk-12-1.png" width="576" style="display: block; margin: auto;" /></p>
+</div>
+
+    </div>
+  </article>
+
+  
+
+
+</main>
+
+      <footer class="footer">
+        <ul class="footer-links">
+          <li>
+            <a href="https://www.itkp.uni-bonn.de/~urbach/blog/index.xml" type="application/rss+xml" target="_blank">RSS feed</a>
+          </li>
+          <li>
+            <a href="https://gohugo.io/" class="footer-links-kudos">Made with <img src="https://www.itkp.uni-bonn.de/~urbach/blog/images/hugo-logo.png" alt="Img link to Hugo website" width="22" height="22"></a>
+          </li>
+        </ul>
+      </footer>
+
+    </div>
+    
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/r.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/c.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/c&#43;&#43;.min.js"></script>
+<script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+
+
+
+    
+<script src="https://www.itkp.uni-bonn.de/~urbach/blog/js/math-code.js"></script>
+<script async src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
+    
+  </body>
+</html>
+

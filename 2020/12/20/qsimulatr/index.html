@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.80.0" />
+
+
+<title>The qsimulatR package on CRAN - GedankenExperiment</title>
+<meta property="og:title" content="The qsimulatR package on CRAN - GedankenExperiment">
+
+
+  <link href='https://www.itkp.uni-bonn.de/~urbach/blog/favicon.ico' rel='icon' type='image/x-icon'/>
+
+
+
+  
+
+
+
+
+
+
+
+<link rel="stylesheet" href="https://www.itkp.uni-bonn.de/~urbach/blog/css/fonts.css" media="all">
+<link rel="stylesheet" href="https://www.itkp.uni-bonn.de/~urbach/blog/css/main.css" media="all">
+
+
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <nav class="nav">
+  <a href="https://www.itkp.uni-bonn.de/~urbach/blog/" class="nav-logo">
+    <img src="https://www.itkp.uni-bonn.de/~urbach/blog/images/%3cnil%3e"
+         width=""
+         height=""
+         alt="">
+  </a>
+
+  <ul class="nav-links">
+    
+    <li><a href="https://www.itkp.uni-bonn.de/~urbach/blog/about/">GedankenExperiment</a></li>
+    
+    <li><a href="https://github.com/urbach">GitHub</a></li>
+    
+    <li><a href="https://www.itkp.uni-bonn.de/~urbach/blog/">Home</a></li>
+    
+    <li><a href="https://www.itkp.uni-bonn.de/~urbach/blog/links/">Links</a></li>
+    
+    <li><a href="https://www.itkp.uni-bonn.de/~urbach/blog/tags/">Tags</a></li>
+    
+  </ul>
+</nav>
+
+      </header>
+
+
+<main class="content" role="main">
+
+  <article class="article">
+    
+    <span class="article-duration">2 min read</span>
+    
+
+    <h1 class="article-title">The qsimulatR package on CRAN</h1>
+
+    
+    <span class="article-date">2020-12-20</span></br>
+    
+
+    <span class="article-author">
+      Johann Ostmeyer, Carsten Urbach
+    </span>
+    
+    <div class="article-content">
+      
+
+
+<div id="qsimulatr-package-for-quantum-computing-with-r" class="section level1">
+<h1>qsimulatR package for quantum computing with R</h1>
+<p>Quantum computing is attracting a lot of attention recently due to
+significant advances in constructing quantum devices. While this does
+not yet mean that large scale quantum computing is possible, it might
+be so in the future. Thus, for the time being, quantum simulators play
+an important role for inventing and testing of algorithms.</p>
+<p>Quantum computing requires a different approach to programming than
+many of us are used to on classical computers. The more or less
+standard approach is now via so-called <strong>quantum circuits</strong>,
+a generalisation of classical logical circuits (or better classical
+reversible circuits). The basic entity of such a circuit is a <strong>quantum
+state</strong> composed out of qubits. Such states can be manipulated via
+<strong>unitary quantum gates</strong>. Classical information can be retrieved by
+performing (projective) <strong>measurements</strong>.</p>
+<p>For a comprehensive introduction and discussion see <span class="citation">Nielsen and Chuang (<a href="#ref-nielsenchuan">2016</a>)</span>.</p>
+<p>The <code>qsimulatR</code> package provides the functionality to simulate quantum
+computing using <code>R</code>. It may be installed now via
+<code>install.packages("qsimulatR")</code> from the <code>R</code> console.</p>
+<p><code>qsimulatR</code> is ideally suited to be used for educational
+purposes. There are several vignettes provided with some standard
+quantum circuits. <code>qsimulatR</code> provides the ability to export to
+<code>Qiskit</code>, which then allows one to run the code on existing quantum
+hardware. Moreover, quantum circuits can be visualised, like for
+instance</p>
+<p><img src="https://www.itkp.uni-bonn.de/~urbach/blog/2020/12/20/qsimulatr/index_files/figure-html/unnamed-chunk-2-1.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="bibliography" class="section level1 unnumbered">
+<h1>References</h1>
+<div id="refs" class="references">
+<div id="ref-nielsenchuan">
+<p>Nielsen, M. A., and I. L. Chuang. 2016. <em>Quantum Computation and Quantum Information</em>. 10th ed. Cambridge University Press.</p>
+</div>
+</div>
+</div>
+
+    </div>
+  </article>
+
+  
+
+
+</main>
+
+      <footer class="footer">
+        <ul class="footer-links">
+          <li>
+            <a href="https://www.itkp.uni-bonn.de/~urbach/blog/index.xml" type="application/rss+xml" target="_blank">RSS feed</a>
+          </li>
+          <li>
+            <a href="https://gohugo.io/" class="footer-links-kudos">Made with <img src="https://www.itkp.uni-bonn.de/~urbach/blog/images/hugo-logo.png" alt="Img link to Hugo website" width="22" height="22"></a>
+          </li>
+        </ul>
+      </footer>
+
+    </div>
+    
+
+    
+
+    
+  </body>
+</html>
+

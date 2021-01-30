@@ -2,27 +2,27 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Statistics on GedankenExperiment</title>
-    <link>https://www.itkp.uni-bonn.de/~urbach/blog/tags/statistics/</link>
+    <link>/tags/statistics/</link>
     <description>Recent content in Statistics on GedankenExperiment</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 01 Aug 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://www.itkp.uni-bonn.de/~urbach/blog/tags/statistics/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 01 Aug 2020 00:00:00 +0000</lastBuildDate><atom:link href="/tags/statistics/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Statistical analysis of correlation functions using hadron</title>
-      <link>https://www.itkp.uni-bonn.de/~urbach/blog/2020/08/01/statistical-analysis-of-correlation-functions-using-hadron/</link>
+      <link>/2020/08/01/statistical-analysis-of-correlation-functions-using-hadron/</link>
       <pubDate>Sat, 01 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.itkp.uni-bonn.de/~urbach/blog/2020/08/01/statistical-analysis-of-correlation-functions-using-hadron/</guid>
+      <guid>/2020/08/01/statistical-analysis-of-correlation-functions-using-hadron/</guid>
       <description>We recently published the hadron package on CRAN. You may install it via install.packages(&#34;hadron&#34;). Here we explain how to use hadron to analyse so-called correlation functions from Monte Carlo simulations in particle and statistical physics.
 Data Type cf for Correlation Functions In the following we will discuss the analysis of so called correlation functions. We denote a Markov Chain Monte Carlo ensemble as \(U=\{U_\tau\}\), where each \(U_\tau\) has additional internal indices, in particular space \(x\) and Euclidean time \(t\).</description>
     </item>
     
     <item>
       <title>hadron package for statistical data analysis on CRAN</title>
-      <link>https://www.itkp.uni-bonn.de/~urbach/blog/2020/07/04/hadron-package-for-statistical-data-analysis-on-cran/</link>
+      <link>/2020/07/04/hadron-package-for-statistical-data-analysis-on-cran/</link>
       <pubDate>Sat, 04 Jul 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.itkp.uni-bonn.de/~urbach/blog/2020/07/04/hadron-package-for-statistical-data-analysis-on-cran/</guid>
+      <guid>/2020/07/04/hadron-package-for-statistical-data-analysis-on-cran/</guid>
       <description>hadron is an R package, which is now available on CRAN. It represents a toolkit to perform statistical analyses of correlation functions generated from Lattice Monte Carlo simulations. In particular, a class cf for correlation functions and methods to analyse those are defined. This includes (blocked) bootstrap (based on the boot package) and jackknife, but also an automatic determination of integrated autocorrelation times. hadron also provides a very general function bootstrap.</description>
     </item>
     

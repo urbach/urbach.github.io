@@ -10,7 +10,7 @@
 <meta property="og:title" content="hadron package for statistical data analysis on CRAN - GedankenExperiment">
 
 
-  <link href='https://www.itkp.uni-bonn.de/~urbach/blog/favicon.ico' rel='icon' type='image/x-icon'/>
+  <link href='/favicon.ico' rel='icon' type='image/x-icon'/>
 
 
 
@@ -27,8 +27,8 @@
 
 
 
-<link rel="stylesheet" href="https://www.itkp.uni-bonn.de/~urbach/blog/css/fonts.css" media="all">
-<link rel="stylesheet" href="https://www.itkp.uni-bonn.de/~urbach/blog/css/main.css" media="all">
+<link rel="stylesheet" href="/css/fonts.css" media="all">
+<link rel="stylesheet" href="/css/main.css" media="all">
 
 
 
@@ -37,8 +37,8 @@
     <div class="wrapper">
       <header class="header">
         <nav class="nav">
-  <a href="https://www.itkp.uni-bonn.de/~urbach/blog/" class="nav-logo">
-    <img src="https://www.itkp.uni-bonn.de/~urbach/blog/images/%3cnil%3e"
+  <a href="/" class="nav-logo">
+    <img src="/images/%3cnil%3e"
          width=""
          height=""
          alt="">
@@ -46,15 +46,15 @@
 
   <ul class="nav-links">
     
-    <li><a href="https://www.itkp.uni-bonn.de/~urbach/blog/about/">GedankenExperiment</a></li>
+    <li><a href="/about/">GedankenExperiment</a></li>
     
     <li><a href="https://github.com/urbach">GitHub</a></li>
     
-    <li><a href="https://www.itkp.uni-bonn.de/~urbach/blog/">Home</a></li>
+    <li><a href="/">Home</a></li>
     
-    <li><a href="https://www.itkp.uni-bonn.de/~urbach/blog/links/">Links</a></li>
+    <li><a href="/links/">Links</a></li>
     
-    <li><a href="https://www.itkp.uni-bonn.de/~urbach/blog/tags/">Tags</a></li>
+    <li><a href="/tags/">Tags</a></li>
     
   </ul>
 </nav>
@@ -202,7 +202,7 @@ resampling. <code>boot.R</code> is the number of bootstrap replicates,
 data with errors</p>
 <pre class="r"><code>plot(correlatormatrix, log=&quot;y&quot;,
      xlab=c(&quot;t/a&quot;), ylab=&quot;C(t)&quot;)</code></pre>
-<p><img src="https://www.itkp.uni-bonn.de/~urbach/blog/2020/07/04/hadron-package-for-statistical-data-analysis-on-cran/index_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<p><img src="/2020/07/04/hadron-package-for-statistical-data-analysis-on-cran/index_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
 </div>
 <div id="solving-the-gevp" class="section level1">
 <h1>Solving the GEVP</h1>
@@ -242,7 +242,7 @@ where in this case we have <span class="math inline">\(i=1,2\)</span></p>
 pc2 &lt;- gevp2cf(gevp=correlatormatrix.gevp, id=2)
 plot(pc1, col=&quot;red&quot;, pch=21, log=&quot;y&quot;, xlab=&quot;t&quot;, ylab=&quot;C(t)&quot;)
 plot(pc2, rep=TRUE, col=&quot;blue&quot;, pch=22)</code></pre>
-<p><img src="https://www.itkp.uni-bonn.de/~urbach/blog/2020/07/04/hadron-package-for-statistical-data-analysis-on-cran/index_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<p><img src="/2020/07/04/hadron-package-for-statistical-data-analysis-on-cran/index_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
 <p>These principal correlators can be analysed as every object of type
 <code>cf</code>, see below.</p>
 <div id="additional-options" class="section level2">
@@ -283,7 +283,7 @@ application to</p>
 <pre><code>## Loading required namespace: minpack.lm</code></pre>
 <pre class="r"><code>plot(pc1.matrixfit, do.qqplot=FALSE,
      xlab=&quot;t&quot;, ylab=&quot;C(t)&quot;)</code></pre>
-<p><img src="https://www.itkp.uni-bonn.de/~urbach/blog/2020/07/04/hadron-package-for-statistical-data-analysis-on-cran/index_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+<p><img src="/2020/07/04/hadron-package-for-statistical-data-analysis-on-cran/index_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
 <p>An extended overview is provided by the overloaded <code>summary</code>
 function</p>
 <pre class="r"><code>summary(pc1.matrixfit)</code></pre>
@@ -324,13 +324,13 @@ earlier time slices in order to be sensitive to excited states.</p>
                            model=&quot;pc&quot;)
 plot(pc1.matrixfit, do.qqplot=FALSE,
      xlab=&quot;t&quot;, ylab=&quot;C(t)&quot;)</code></pre>
-<p><img src="https://www.itkp.uni-bonn.de/~urbach/blog/2020/07/04/hadron-package-for-statistical-data-analysis-on-cran/index_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+<p><img src="/2020/07/04/hadron-package-for-statistical-data-analysis-on-cran/index_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
 <p>A useful crosscheck is to not plot the raw correlator, but the
 correlator with the leading exponential divided out</p>
 <pre class="r"><code>plot(pc1.matrixfit, do.qqplot=FALSE,
      xlab=&quot;t&quot;, ylab=&quot;C(t)&quot;, plot.raw=FALSE)
 abline(h=1, lty=2)</code></pre>
-<p><img src="https://www.itkp.uni-bonn.de/~urbach/blog/2020/07/04/hadron-package-for-statistical-data-analysis-on-cran/index_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
+<p><img src="/2020/07/04/hadron-package-for-statistical-data-analysis-on-cran/index_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
 <p>In such a plot all the data points should fluctuate around one.
 This matrixfit gives as a result
 <span class="math inline">\(E =0.334(60)\)</span>.</p>
@@ -346,7 +346,7 @@ can be computed and bootstrapped as follows</p>
                                        t1=5, t2=20)
 plot(pc1.effectivemass, col=&quot;red&quot;, pch=21, ylim=c(0,1),
      xlab=&quot;t&quot;, ylab=&quot;Meff&quot;)</code></pre>
-<p><img src="https://www.itkp.uni-bonn.de/~urbach/blog/2020/07/04/hadron-package-for-statistical-data-analysis-on-cran/index_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
+<p><img src="/2020/07/04/hadron-package-for-statistical-data-analysis-on-cran/index_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
 <p>From the fit to the effective masses we obtain in this case
 <span class="math inline">\(E =0.365(33)\)</span>.</p>
 </div>
@@ -363,10 +363,10 @@ plot(pc1.effectivemass, col=&quot;red&quot;, pch=21, ylim=c(0,1),
       <footer class="footer">
         <ul class="footer-links">
           <li>
-            <a href="https://www.itkp.uni-bonn.de/~urbach/blog/index.xml" type="application/rss+xml" target="_blank">RSS feed</a>
+            <a href="/index.xml" type="application/rss+xml" target="_blank">RSS feed</a>
           </li>
           <li>
-            <a href="https://gohugo.io/" class="footer-links-kudos">Made with <img src="https://www.itkp.uni-bonn.de/~urbach/blog/images/hugo-logo.png" alt="Img link to Hugo website" width="22" height="22"></a>
+            <a href="https://gohugo.io/" class="footer-links-kudos">Made with <img src="/images/hugo-logo.png" alt="Img link to Hugo website" width="22" height="22"></a>
           </li>
         </ul>
       </footer>
@@ -389,7 +389,7 @@ plot(pc1.effectivemass, col=&quot;red&quot;, pch=21, ylim=c(0,1),
 
 
     
-<script src="https://www.itkp.uni-bonn.de/~urbach/blog/js/math-code.js"></script>
+<script src="/js/math-code.js"></script>
 <script async src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 
 

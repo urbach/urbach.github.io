@@ -2,26 +2,26 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Authors on GedankenExperiment</title>
-    <link>https://www.itkp.uni-bonn.de/~urbach/blog/authors/</link>
+    <link>/authors/</link>
     <description>Recent content in Authors on GedankenExperiment</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 20 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://www.itkp.uni-bonn.de/~urbach/blog/authors/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 20 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="/authors/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Carsten Urbach</title>
-      <link>https://www.itkp.uni-bonn.de/~urbach/blog/authors/carsten-urbach/</link>
+      <link>/authors/carsten-urbach/</link>
       <pubDate>Sun, 20 Dec 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.itkp.uni-bonn.de/~urbach/blog/authors/carsten-urbach/</guid>
+      <guid>/authors/carsten-urbach/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Johann Ostmeyer</title>
-      <link>https://www.itkp.uni-bonn.de/~urbach/blog/authors/johann-ostmeyer/</link>
+      <link>/authors/johann-ostmeyer/</link>
       <pubDate>Sun, 20 Dec 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.itkp.uni-bonn.de/~urbach/blog/authors/johann-ostmeyer/</guid>
+      <guid>/authors/johann-ostmeyer/</guid>
       <description></description>
     </item>
     

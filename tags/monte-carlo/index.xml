@@ -23,7 +23,8 @@ Data Type cf for Correlation Functions In the following we will discuss the anal
       <pubDate>Sat, 04 Jul 2020 00:00:00 +0000</pubDate>
       
       <guid>/2020/07/04/hadron-package-for-statistical-data-analysis-on-cran/</guid>
-      <description>hadron is an R package, which is now available on CRAN. It represents a toolkit to perform statistical analyses of correlation functions generated from Lattice Monte Carlo simulations. In particular, a class cf for correlation functions and methods to analyse those are defined. This includes (blocked) bootstrap (based on the boot package) and jackknife, but also an automatic determination of integrated autocorrelation times. hadron also provides a very general function bootstrap.</description>
+      <description>hadron is an R package, which is now available on CRAN.
+hadron represents a toolkit to perform statistical analyses of correlation functions generated from Lattice Monte Carlo simulations. In particular, a class cf for correlation functions and methods to analyse those are defined. This includes (blocked) bootstrap (based on the boot package) and jackknife, but also an automatic determination of integrated autocorrelation times. hadron also provides a very general function bootstrap.</description>
     </item>
     
   </channel>
